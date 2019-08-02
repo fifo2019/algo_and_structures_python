@@ -3,3 +3,16 @@
 #Год является високосным в двух случаях: либо он кратен 4,
 # но при этом не кратен 100, либо кратен 400.
 
+
+def leap_year(year):
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        print(f"{year} год - високосный")
+    else:
+        print(f"{year} год - Обычный")
+
+
+try:
+    year = int(input("Введите год: "))
+    leap_year(year)
+except ValueError:
+    print("Пожалуйста введите год для проверки!")
