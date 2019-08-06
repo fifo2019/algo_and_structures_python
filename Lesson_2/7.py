@@ -3,3 +3,18 @@
 натуральных чисел выполняется равенство: 1+2+...+n = n(n+1)/2,
  где n - любое натуральное число.
 """
+
+print("Проверяющую равенство: 1+2+...+n = n(n+1)/2,где n - любое натуральное число.")
+userInput = int(input("Введите число: "))
+
+left_side = 0
+
+for i in range(1, userInput + 1):
+    left_side += i
+
+right_side = userInput * (userInput + 1) // 2
+
+if left_side == right_side:
+    print("Равенство доказано")
+else:
+    print("Равенство не доказано")
