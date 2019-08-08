@@ -5,3 +5,12 @@
 (или 0, 3, 4, 5 - если индексация начинается с нуля),
 т.к. именно в этих позициях первого массива стоят четные числа.
 """
+
+list_first = [8, 3, 15, 6, 4, 2]
+list_second = []
+
+for index, value in enumerate(list_first):
+    if value % 2 == 0:
+        list_second.append(index)
+
+print(list_second)
