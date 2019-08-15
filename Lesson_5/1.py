@@ -5,3 +5,22 @@
 вывести наименования предприятий, чья прибыль выше среднего и отдельно
 вывести наименования предприятий, чья прибыль ниже среднего.
 """
+import collections
+
+quentityEnterprises = int(input("Введите количество предприятий: "))
+
+enterpris = collections.defaultdict(list)
+
+for i in range(quentityEnterprises):
+    nameEnterpris = input(f'Наименование {i + 1}-ого предприятия: ')
+    profitQuarterly = [(int(input(f'Введите прибыль за {j + 1}-й квартал: '))) for j in range(4)]
+    enterpris[nameEnterpris] = sum(profitQuarterly)
+
+profitAverage = sum(enterpris.values()) / quentityEnterprises
+print(f'Средняя прибыль {profitAverage}')
+
+for i in enterpris:
+    if enterpris[i] < profitAverage:
+        print(f'Предприятие "{i}" имеет прибыль ниже средней: ({enterpris[i]})')
+    elif enterpris[i] > profitAverage:
+        print(f'Предприятие "{i}" имеет прибыль выше средней: ({enterpris[i]})')
