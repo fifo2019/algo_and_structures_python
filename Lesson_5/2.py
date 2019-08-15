@@ -16,6 +16,8 @@ for i in range(2):
 print(numbers)
 
 lst = [int(''.join(i), 16) for i in numbers.values()]
+amount = list(hex(sum(lst)).upper())
+composition = list(hex(lst[0] * lst[1]).upper())
 
-print(f'Сумма введенных чисел: {list(hex(sum(lst)).upper())}')
-print(f'Произведение введенных чисел : {list(hex(lst[0] * lst[1]).upper())}')
+print(f'Сумма введенных чисел: {amount[2:]}')
+print(f'Произведение введенных чисел : {composition[2:]}')
